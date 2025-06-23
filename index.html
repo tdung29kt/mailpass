@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profile Tích Xanh Xoay</title>
+  <title>Profile Tích Xanh</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -36,19 +36,42 @@
       border: 4px solid #e0e0e0;
     }
 
-    /* Badge kiểu Facebook (răng cưa) và xoay */
     .verified-badge {
       position: absolute;
       bottom: 0;
       right: 0;
-      width: 30px;
-      height: 30px;
+      width: 34px;
+      height: 34px;
+    }
+
+    .gear-wrapper {
       animation: spin 4s linear infinite;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .gear-wrapper svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      color: #1da1f2;
+      font-weight: bold;
+      z-index: 1;
     }
 
     @keyframes spin {
       from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      to   { transform: rotate(360deg); }
     }
 
     .name {
@@ -93,10 +116,13 @@
     <div class="avatar-wrapper">
       <img src="https://i.imgur.com/3ZQ3Z2a.png" alt="Avatar" class="avatar">
       <div class="verified-badge">
-        <!-- SVG tích xanh kiểu Facebook -->
-        <svg viewBox="0 0 512 512" fill="#1da1f2" xmlns="http://www.w3.org/2000/svg">
-          <path d="M512 256l-60.69-35.11 8.79-68.65-66.91-22.94-22.94-66.91-68.65 8.79L256 0l-35.11 60.69-68.65-8.79-22.94 66.91-66.91 22.94 8.79 68.65L0 256l60.69 35.11-8.79 68.65 66.91 22.94 22.94 66.91 68.65-8.79L256 512l35.11-60.69 68.65 8.79 22.94-66.91 66.91-22.94-8.79-68.65L512 256zm-286.38 99.72l-72.34-72.34 33.94-33.94 38.4 38.4 89.53-89.53 33.94 33.94-123.47 123.47z"/>
-        </svg>
+        <div class="gear-wrapper">
+          <!-- SVG Răng cưa vòng ngoài -->
+          <svg viewBox="0 0 512 512" fill="#1da1f2" xmlns="http://www.w3.org/2000/svg">
+            <path d="M512 256l-60.69-35.11 8.79-68.65-66.91-22.94-22.94-66.91-68.65 8.79L256 0l-35.11 60.69-68.65-8.79-22.94 66.91-66.91 22.94 8.79 68.65L0 256l60.69 35.11-8.79 68.65 66.91 22.94 22.94 66.91 68.65-8.79L256 512l35.11-60.69 68.65 8.79 22.94-66.91 66.91-22.94-8.79-68.65L512 256z"/>
+          </svg>
+        </div>
+        <div class="checkmark">✔</div>
       </div>
     </div>
     <div class="name">Dũng Trần</div>
