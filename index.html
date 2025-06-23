@@ -1,29 +1,92 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang test GitHub Pages</title>
-    <style>
-        body {
-            background-color: #111;
-            color: #0f0;
-            font-family: monospace;
-            text-align: center;
-            padding-top: 100px;
-        }
-        h1 {
-            font-size: 3rem;
-            animation: glow 1.5s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from { text-shadow: 0 0 10px #0f0; }
-            to { text-shadow: 0 0 30px #0f0, 0 0 60px #0f0; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #111;
+      height: 100vh;
+      padding: 20px;
+      border-right: 2px solid #0f0;
+    }
+
+    .profile {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid #0f0;
+      margin-bottom: 10px;
+    }
+
+    .profile h2 {
+      font-size: 1.2rem;
+      color: #0f0;
+    }
+
+    .menu a {
+      display: block;
+      padding: 12px;
+      margin: 8px 0;
+      color: #f0f0f0;
+      text-decoration: none;
+      border-left: 4px solid transparent;
+      transition: 0.2s;
+    }
+
+    .menu a:hover {
+      background-color: #222;
+      border-left: 4px solid #0f0;
+      color: #0f0;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .content h1 {
+      color: #0f0;
+    }
+  </style>
 </head>
 <body>
-    <h1>🚀 Đã triển khai thành công!</h1>
-    <p>Website của bạn đang chạy trên GitHub Pages.</p>
+  <div class="sidebar">
+    <div class="profile">
+      <img src="https://i.imgur.com/1XKjF8Z.png" alt="Admin Avatar">
+      <h2>Admin Dũng</h2>
+    </div>
+    <div class="menu">
+      <a href="https://facebook.com" target="_blank">🏠 Trang chủ</a>
+      <a href="https://your-link.com/ban-gmail" target="_blank">📧 Bán Gmail</a>
+      <a href="https://your-link.com/tai-khoan" target="_blank">👤 Tài khoản</a>
+      <a href="https://your-link.com/lien-he" target="_blank">📞 Liên hệ</a>
+      <a href="https://your-link.com/dang-xuat" target="_blank">🚪 Đăng xuất</a>
+    </div>
+  </div>
+  <div class="content">
+    <h1>Chào mừng đến với trang Admin</h1>
+    <p>Chọn một mục ở menu bên trái để tiếp tục.</p>
+  </div>
 </body>
 </html>
