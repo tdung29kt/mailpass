@@ -13,6 +13,7 @@
       align-items: center;
       height: 100vh;
     }
+
     .profile-card {
       background: white;
       border-radius: 16px;
@@ -20,33 +21,55 @@
       padding: 30px;
       text-align: center;
       width: 320px;
+      position: relative;
     }
+
+    .avatar-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
     .avatar {
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      border: 4px solid #1da1f2;
       object-fit: cover;
+      border: 4px solid #e0e0e0;
     }
+
+    .verified-badge {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: #1da1f2;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid white;
+    }
+
+    .verified-badge::before {
+      content: "✔";
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
     .name {
       font-size: 24px;
       margin: 12px 0 4px;
     }
-    .verified {
-      color: #1da1f2;
-      font-size: 16px;
-    }
-    .verified::after {
-      content: "✔";
-      margin-left: 6px;
-      color: #1da1f2;
-    }
+
     .buttons {
       margin-top: 20px;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
+
     .buttons a {
       text-decoration: none;
       background: #1da1f2;
@@ -56,6 +79,7 @@
       font-weight: bold;
       transition: background 0.2s;
     }
+
     .buttons a:hover {
       background: #0d8ddf;
     }
@@ -63,9 +87,11 @@
 </head>
 <body>
   <div class="profile-card">
-    <img src="https://i.imgur.com/3ZQ3Z2a.png" alt="Avatar" class="avatar">
+    <div class="avatar-wrapper">
+      <img src="https://i.imgur.com/3ZQ3Z2a.png" alt="Avatar" class="avatar">
+      <div class="verified-badge"></div>
+    </div>
     <div class="name">Dũng Trần</div>
-    <div class="verified">Đã xác minh</div>
     <div class="buttons">
       <a href="https://facebook.com/" target="_blank">Facebook</a>
       <a href="https://t.me/" target="_blank">Telegram</a>
