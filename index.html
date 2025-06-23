@@ -1,144 +1,133 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profile Tích Xanh</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f0f2f5;
+      background: #f0f0f0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
 
-    .profile-card {
+    .card {
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      padding: 30px;
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
       text-align: center;
-      width: 320px;
     }
 
-    .avatar-wrapper {
+    .card .top {
+      background: #2979ff;
+      padding: 20px;
       position: relative;
-      display: inline-block;
     }
 
-    .avatar {
-      width: 120px;
-      height: 120px;
+    .card .top img.avatar {
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #e0e0e0;
+      border: 4px solid white;
+      margin-top: 10px;
     }
 
-    .verified-badge {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 34px;
-      height: 34px;
+    .card h2 {
+      margin: 15px 0 5px;
+      font-weight: 600;
     }
 
-    .gear-wrapper {
-      animation: spin 4s linear infinite;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
+    .card p.role {
+      color: #777;
+      font-size: 14px;
     }
 
-    .gear-wrapper svg {
-      width: 100%;
-      height: 100%;
+    .social-icons {
+      margin: 15px 0;
     }
 
-    .checkmark {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 18px;
-      color: #1da1f2;
-      font-weight: bold;
-      z-index: 1;
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
-    }
-
-    .name {
-      font-size: 24px;
-      margin: 12px 0 4px;
+    .social-icons i {
+      font-size: 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      color: #333;
     }
 
     .buttons {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+      margin: 15px 0;
     }
 
-    .buttons a {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 10px;
-      text-decoration: none;
-      background: linear-gradient(45deg, #1da1f2, #0d8ddf);
-      color: white;
-      padding: 10px 15px;
-      border-radius: 8px;
+    .buttons button {
+      padding: 8px 20px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
       font-weight: bold;
-      transition: transform 0.2s ease, box-shadow 0.2s;
+      transition: 0.3s;
     }
 
-    .buttons a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    .buttons .subscribe {
+      background: #2979ff;
+      color: white;
+      margin-right: 10px;
     }
 
-    .buttons img {
-      width: 20px;
-      height: 20px;
+    .buttons .message {
+      background: white;
+      border: 2px solid #2979ff;
+      color: #2979ff;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid #eee;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+
+    .stats i {
+      margin-right: 5px;
     }
   </style>
 </head>
 <body>
-  <div class="profile-card">
-    <div class="avatar-wrapper">
-      <img src="https://i.imgur.com/3ZQ3Z2a.png" alt="Avatar" class="avatar">
-      <div class="verified-badge">
-        <div class="gear-wrapper">
-          <!-- SVG Răng cưa vòng ngoài -->
-          <svg viewBox="0 0 512 512" fill="#1da1f2" xmlns="http://www.w3.org/2000/svg">
-            <path d="M512 256l-60.69-35.11 8.79-68.65-66.91-22.94-22.94-66.91-68.65 8.79L256 0l-35.11 60.69-68.65-8.79-22.94 66.91-66.91 22.94 8.79 68.65L0 256l60.69 35.11-8.79 68.65 66.91 22.94 22.94 66.91 68.65-8.79L256 512l35.11-60.69 68.65 8.79 22.94-66.91 66.91-22.94-8.79-68.65L512 256z"/>
-          </svg>
-        </div>
-        <div class="checkmark">✔</div>
-      </div>
+  <div class="card">
+    <div class="top">
+      <img src="https://i.imgur.com/8Km9tLL.png" class="avatar" alt="avatar" />
     </div>
-    <div class="name">Dũng Trần</div>
+    <h2>CodeBySarthak</h2>
+    <p class="role">Full Stack Developer</p>
+
+    <div class="social-icons">
+      <i class="fab fa-github"></i>
+      <i class="fab fa-linkedin"></i>
+      <i class="fab fa-instagram" style="color: #d62976;"></i>
+      <i class="fab fa-youtube" style="color: #ff0000;"></i>
+    </div>
+
     <div class="buttons">
-      <a href="https://facebook.com/" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook">
-        Facebook
-      </a>
-      <a href="https://t.me/" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
-        Telegram
-      </a>
-      <a href="mailto:example@email.com">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
-        Gửi Email
-      </a>
+      <button class="subscribe">Subscribe</button>
+      <button class="message">Message</button>
+    </div>
+
+    <div class="stats">
+      <div><i class="far fa-heart"></i> 60k</div>
+      <div><i class="far fa-comment"></i> 20k</div>
+      <div><i class="far fa-share-square"></i> 12k</div>
     </div>
   </div>
 </body>
